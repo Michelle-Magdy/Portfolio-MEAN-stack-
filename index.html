@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michelle Magdy - MEAN Stack Developer</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-container">
+          <div class="logo">Michelle Magdy</div>
+          <ul class="nav-links">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="nav-controls">
+            <button class="theme-toggle">
+              <i class="fas fa-moon"></i>
+            </button>
+            <button class="mobile-menu-btn">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <ul class="nav-links">
+          <li>
+            <a href="#home" class="nav-link" onclick="closeMobileMenu()"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#about" class="nav-link" onclick="closeMobileMenu()"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="#skills" class="nav-link" onclick="closeMobileMenu()"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a href="#projects" class="nav-link" onclick="closeMobileMenu()"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="#experience" class="nav-link" onclick="closeMobileMenu()"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="nav-link" onclick="closeMobileMenu()"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>
+              Hi, I'm
+              <span class="typing-text" id="typing-text">Michelle Magdy</span
+              ><span class="typing-cursor" id="cursor">|</span>
+            </h1>
+            <p class="subtitle">MEAN Stack Developer</p>
+            <p>
+              Passionate about creating modern web applications with MongoDB,
+              Express.js, Angular, and Node.js. Currently pursuing my degree in
+              Computer Science and AI while gaining hands-on experience through
+              internships and student activities.
+            </p>
+            <div class="cta-buttons">
+              <a href="#projects" class="btn btn-primary">
+                <i class="fas fa-code"></i> View My Work
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <i class="fas fa-envelope"></i> Get In Touch
+              </a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="profile-card">
+              <div class="profile-image">
+                <i class="fas fa-user"></i>
+              </div>
+              <h3>Michelle Magdy</h3>
+              <p>MEAN Stack Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-image">
+            <div class="profile-image">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+          </div>
+          <div class="about-text">
+            <h3>Hello! I'm Michelle Magdy</h3>
+            <p>
+              I'm a dedicated MEAN Stack developer currently studying at the
+              Faculty of Computers and Artificial Intelligence (2023-2027). My
+              journey in web development began with a passion for creating
+              innovative digital solutions that make a difference.
+            </p>
+
+            <p>
+              As a Frontend Committee member at "Minders" student activity, I've
+              had the opportunity to collaborate on various projects and mentor
+              fellow students. My recent MEAN Stack internship at NTI has
+              equipped me with comprehensive skills in modern web development
+              technologies.
+            </p>
+
+            <p>
+              I believe in continuous learning and staying updated with the
+              latest industry trends. When I'm not coding, you can find me
+              exploring new technologies, contributing to open-source projects,
+              or sharing knowledge with the developer community.
+            </p>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-number">15+</span>
+            <span>Projects Completed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2+</span>
+            <span>Years Learning</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span>Dedication</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3><i class="fas fa-laptop-code"></i> Frontend Development</h3>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Angular</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">HTML5 & CSS3</span>
+                <span class="skill-percentage">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">JavaScript (ES6+)</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">TypeScript</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="80"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3><i class="fas fa-server"></i> Backend Development</h3>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Node.js</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Express.js</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">RESTful APIs</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Authentication & Security</span>
+                <span class="skill-percentage">75%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="75"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3><i class="fas fa-database"></i> Database & Tools</h3>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">MongoDB</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Git & GitHub</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">VS Code</span>
+                <span class="skill-percentage">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Postman</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">E-Commerce Platform</h3>
+              <p class="project-description">
+                A full-stack e-commerce application built with the MEAN stack,
+                featuring user authentication, product management, shopping
+                cart, and payment integration.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Angular</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express.js</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Task Management System</h3>
+              <p class="project-description">
+                A collaborative task management application with real-time
+                updates, team collaboration features, and project tracking
+                capabilities.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Angular</span>
+                <span class="tech-tag">Socket.io</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-blog"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Personal Blog Platform</h3>
+              <p class="project-description">
+                A modern blogging platform with markdown support, comment
+                system, user profiles, and content management dashboard.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Angular</span>
+                <span class="tech-tag">Express.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">JWT</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Analytics Dashboard</h3>
+              <p class="project-description">
+                An interactive data visualization dashboard with real-time
+                charts, filtering capabilities, and exportable reports for
+                business intelligence.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Angular</span>
+                <span class="tech-tag">Chart.js</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Learning Management System</h3>
+              <p class="project-description">
+                An educational platform with course management, quiz system,
+                progress tracking, and student-teacher interaction features.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Angular</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express.js</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-comments"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Real-time Chat Application</h3>
+              <p class="project-description">
+                A modern chat application with real-time messaging, file
+                sharing, group chats, and emoji support using WebSocket
+                technology.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Angular</span>
+                <span class="tech-tag">Socket.io</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Experience & Education</h2>
+        <div class="experience-timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2024</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">MEAN Stack Intern</h3>
+              <p class="timeline-company">
+                National Telecommunication Institute (NTI)
+              </p>
+              <p>
+                Completed an intensive MEAN Stack development internship where I
+                gained hands-on experience in building full-stack web
+                applications. Worked on real-world projects and learned industry
+                best practices for modern web development.
+              </p>
+              <ul>
+                <li>
+                  Developed multiple full-stack applications using MongoDB,
+                  Express.js, Angular, and Node.js
+                </li>
+                <li>
+                  Collaborated with senior developers on production-level
+                  projects
+                </li>
+                <li>
+                  Learned advanced concepts in API design and database
+                  optimization
+                </li>
+                <li>
+                  Gained experience in version control, testing, and deployment
+                  processes
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2023 - Present</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Frontend Committee Member</h3>
+              <p class="timeline-company">Minders Student Activity</p>
+              <p>
+                Active member of the Frontend Committee at Minders student
+                activity, where I contribute to various web development projects
+                and help organize technical workshops and events.
+              </p>
+              <ul>
+                <li>
+                  Collaborated on multiple student-led web development projects
+                </li>
+                <li>
+                  Mentored junior students in frontend development concepts
+                </li>
+                <li>
+                  Organized and conducted workshops on modern web technologies
+                </li>
+                <li>
+                  Contributed to the design and development of the
+                  organization's website
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2023 - 2027</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">
+                Bachelor's Degree in Computer Science
+              </h3>
+              <p class="timeline-company">
+                Faculty of Computers and Artificial Intelligence
+              </p>
+              <p>
+                Currently pursuing my Bachelor's degree with a focus on Computer
+                Science and Artificial Intelligence. Maintaining excellent
+                academic performance while actively participating in practical
+                projects and internships.
+              </p>
+              <ul>
+                <li>
+                  Studying core computer science subjects including algorithms,
+                  data structures, and software engineering
+                </li>
+                <li>
+                  Specializing in artificial intelligence and machine learning
+                  concepts
+                </li>
+                <li>Participating in coding competitions and hackathons</li>
+                <li>Collaborating on research projects with faculty members</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2022</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Started Web Development Journey</h3>
+              <p class="timeline-company">Self-Learning & Online Courses</p>
+              <p>
+                Began my journey into web development through self-study and
+                online courses. Started with HTML, CSS, and JavaScript, then
+                progressed to learn modern frameworks and full-stack
+                development.
+              </p>
+              <ul>
+                <li>
+                  Completed foundational courses in HTML, CSS, and JavaScript
+                </li>
+                <li>Built first portfolio website and personal projects</li>
+                <li>Learned responsive design and modern CSS techniques</li>
+                <li>Started contributing to open-source projects</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Let's Connect!</h3>
+            <p>
+              I'm always interested in hearing about new opportunities,
+              collaborating on projects, or just having a chat about technology.
+              Feel free to reach out!
+            </p>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <p>michelle.magdy@example.com</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h4>Phone</h4>
+                <p>+20 123 456 7890</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h4>Location</h4>
+                <p>Cairo, Egypt</p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="#" class="social-link" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-link" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="social-link" title="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-link" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <h3>Send Me a Message</h3>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell me about your project or just say hello!"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2024 Michelle Magdy. All rights reserved. Built with passion
+          and dedication.
+        </p>
+      </div>
+    </footer>
+
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>
