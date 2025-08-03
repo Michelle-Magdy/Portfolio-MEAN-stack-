@@ -23,6 +23,10 @@ const experienceSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const Experience = mongoose.model("experience", experienceSchema);
@@ -46,7 +50,16 @@ async function createExperience(data) {
 
 // Delete Experience group by ID
 async function deleteExperienceById(id) {
-  return await Experience.findByIdAndDelete(id);
+  return await Experience.findByIdAndUpdate(
+    id,
+    {
+      $set: { isDeleted: true },
+    },
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
 }
 
 // ✅ FIXED: complete update function
@@ -57,6 +70,10 @@ async function updateExperienceById(id, Experience) {
   });
 }
 
+async function getExperienceById(id) {
+  return await Experience.findById(id);
+}
+
 // Export functions and model (optional, for modular use)
 module.exports = {
   Experience,
@@ -64,4 +81,15 @@ module.exports = {
   createExperience,
   deleteExperienceById,
   updateExperienceById,
+  getExperienceById,
+};
+
+// Export functions and model (optional, for modular use)
+module.exports = {
+  Experience,
+  getExperience,
+  createExperience,
+  deleteExperienceById,
+  updateExperienceById,
+  getExperienceById,
 };

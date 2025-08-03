@@ -38,6 +38,10 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    isDeleted: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
@@ -51,7 +55,7 @@ User.syncIndexes()
   .catch((_) => console.log("indexes didn't sync"));
 
 async function getAllUsers() {
-  return await User.find();
+  return await User.find({ isDeleted: false });
 }
 
 async function getUserByName(name) {
@@ -70,7 +74,16 @@ async function updateUserByName(name, user) {
 }
 
 async function deleteUserByName(name) {
-  return await User.findOneAndDelete({ name: name });
+  return await User.findByIdAndUpdate(
+    { name: name },
+    {
+      $set: { isDeleted: true },
+    },
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
 }
 
 module.exports = {

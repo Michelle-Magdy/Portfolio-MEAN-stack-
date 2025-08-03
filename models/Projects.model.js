@@ -31,6 +31,10 @@ const projectSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const Projects = mongoose.model("project", projectSchema);
@@ -54,21 +58,34 @@ async function createProject(data) {
 
 // Delete Projects group by ID
 async function deleteProjectById(id) {
-  return await Projects.findByIdAndDelete(id);
+  return await Projects.findByIdAndUpdate(
+    id,
+    {
+      $set: { isDeleted: true },
+    },
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
 }
 
 // ✅ FIXED: complete update function
-async function updateProjectById(id, skill) {
-  return await Projects.findByIdAndUpdate(id, skill, {
+async function updateProjectById(id, project) {
+  return await Projects.findByIdAndUpdate(id, project, {
     new: true,
     runValidators: true,
   });
+}
+async function getProjectById(id) {
+  return await Projects.findById(id);
 }
 
 // Export functions and model (optional, for modular use)
 module.exports = {
   Projects,
   getProjects,
+  getProjectById,
   createProject,
   deleteProjectById,
   updateProjectById,
