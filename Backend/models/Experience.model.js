@@ -6,7 +6,6 @@ const experienceSchema = new mongoose.Schema({
   },
   endYear: {
     type: Number,
-    default: 0,
   },
   title: {
     type: String,
@@ -40,7 +39,7 @@ Experience.syncIndexes()
 
 // Get all Experience groups
 async function getExperience() {
-  return await Experience.find();
+  return await Experience.find({ isDeleted: false });
 }
 
 // Create a new Experience group
@@ -63,8 +62,8 @@ async function deleteExperienceById(id) {
 }
 
 // ✅ FIXED: complete update function
-async function updateExperienceById(id, Experience) {
-  return await Experience.findByIdAndUpdate(id, Experience, {
+async function updateExperienceById(id, experience) {
+  return await Experience.findByIdAndUpdate(id, experience, {
     new: true,
     runValidators: true,
   });

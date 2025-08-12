@@ -17,7 +17,7 @@ const projectSchema = new mongoose.Schema({
     trim: true,
   },
   technologies: {
-    type: String,
+    type: [String],
     required: true,
     trim: true,
   },
@@ -48,7 +48,7 @@ Projects.syncIndexes()
 
 // Get all skill groups
 async function getProjects() {
-  return await Projects.find();
+  return await Projects.find({ isDeleted: false });
 }
 
 // Create a new Projects group
@@ -79,6 +79,35 @@ async function updateProjectById(id, project) {
 }
 async function getProjectById(id) {
   return await Projects.findById(id);
+}
+
+async function getProjectTechnologies(id) {
+  const project = await getProjectById(id);
+  return project ? project.technologies : [];
+}
+async function addProjectTechnology(id, technology) {
+  return await Projects.findByIdAndUpdate(
+    id,
+    {
+      $addToSet: { technologies: technology },
+    },
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
+}
+async function removeProjectTechnology(id, techid) {
+  return await Projects.findByIdAndUpdate(
+    id,
+    {
+      $pull: { technologies: { _id: techid } },
+    },
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
 }
 
 // Export functions and model (optional, for modular use)

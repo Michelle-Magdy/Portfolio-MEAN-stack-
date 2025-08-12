@@ -4,14 +4,14 @@ const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Name is required"],
+      required: true,
       minlength: [2, "Name must be at least 2 characters"],
       trim: true,
       unique: true,
     },
     email: {
       type: String,
-      required: [true, "Email is required"],
+      default: "",
       lowercase: true,
       match: [
         /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -21,21 +21,44 @@ const userSchema = new mongoose.Schema(
     },
     phone: {
       type: String,
-      required: [true, "Phone number is required"],
+      default: "",
       match: [/^[0-9]{11}$/, "Invalid phone number"],
     },
     location: {
       type: String,
-      required: [true, "Location is required"],
+      default: "",
     },
     image: {
       type: String,
-      required: true,
+      default: "",
       trim: true,
     },
     aboutMe: {
       type: String,
-      required: true,
+      default: "",
+      trim: true,
+    },
+    socialLinks: {
+      github: {
+        type: String,
+        trim: true,
+        default: "",
+      },
+      linkedin: {
+        type: String,
+        trim: true,
+        default: "",
+      },
+    },
+    title: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+
+    description: {
+      type: String,
+      default: "",
       trim: true,
     },
     isDeleted: {
@@ -63,11 +86,11 @@ async function getUserByName(name) {
 }
 
 async function createUser(user) {
-  return await User.create(user);
+  return User.create(user);
 }
 
-async function updateUserByName(name, user) {
-  return await User.findOneAndUpdate({ name: name }, user, {
+async function updateUserById(id, user) {
+  return await User.findOneAndUpdate({ _id: id }, user, {
     new: true,
     runValidators: true,
   });
@@ -86,10 +109,15 @@ async function deleteUserByName(name) {
   );
 }
 
+async function getOneUser() {
+  return User.findOne();
+}
+
 module.exports = {
-  updateUserByName,
+  updateUserById,
   getAllUsers,
   getUserByName,
   createUser,
   deleteUserByName,
+  getOneUser,
 };

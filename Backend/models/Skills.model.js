@@ -37,7 +37,7 @@ Skills.syncIndexes()
 
 // Get all skill groups
 async function getSkills() {
-  return await Skills.find();
+  return await Skills.find({ isDeleted: false });
 }
 
 // Create a new skill group
